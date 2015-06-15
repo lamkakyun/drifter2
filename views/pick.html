@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    include:jade ./side.html
+    .container
+      include:jade ./header.html
+      .main
+        .content
+          if success
+            p #{success}
+          else
+            p #{error}
+            p 捡漂流瓶
+        .operation
+          form(action='/pick', method='post')
+            input(name="userid", type="hidden", value="#{user._id}")
+            p
+              label
+                input(type="radio", name='type' value='-1' checked)
+                | all
+              label
+                input(type="radio", name='type' value='0')
+                | male
+              label
+                input(type="radio", name='type' value='1')
+                | female
+            p
+              button(type="submit" value="pick") 捡一个
+    include:jade ./footer.html
+    script(src="/js/drifter.js")
+

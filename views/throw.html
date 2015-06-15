@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    include:jade ./side.html
+    .container
+      include:jade ./header.html
+      .main
+        .content
+          if success
+            p #{success}
+          else
+            p #{error}
+          p 扔漂流瓶
+        .operation
+          form(action='throw', method='post')
+            p
+              textarea(name='content', rows=10, cols=25)
+            p
+              button(type="submit") 扔出
+    include:jade ./footer.html
+    script(src="/js/drifter.js")
+

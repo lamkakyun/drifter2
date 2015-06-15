@@ -1,0 +1,17 @@
+doctype html
+html(lang=en)
+  head
+    title Sorry! Page Not Found
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    include:jade ./side.html
+    .container
+      include:jade ./header.html
+      .main
+        .content
+          p 页面没有找到 404 err!
+          p
+            a(href="javascript:void(0)" onclick="history.back(-1);") 返回
+        .operation
+    include:jade ./footer.html
+    script(src="/js/drifter.js")

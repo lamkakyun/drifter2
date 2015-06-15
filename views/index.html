@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    include:jade ./side.html
+    .container
+      include:jade ./header.html
+      .main
+        .content
+          if success
+            p #{success}
+          else
+            p #{error}
+            p 欢迎来到梦幻漂流瓶首页#{user.name}
+        .operation
+    include:jade ./footer.html
+    script(src="/js/drifter.js")
+    script.
+      drifter.initIndex();

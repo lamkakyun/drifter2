@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    include:jade ./side.html
+    .container
+      include:jade ./header.html
+      .main
+        .content
+          if success
+            p #{success}
+          else
+            p #{error}
+            p #{user.name}的漂流瓶
+        .bottles
+          each bottle in bottles
+            .bottle
+              .info #{bottle.picktime}
+              .content 
+                p 漂流瓶内容：#{bottle.content}
+                each msg in bottle.messages
+                  p 
+                    if msg.type == 1 
+                      捡者回复:
+                    else
+                      扔者回复:
+                    | #{msg.msg}
+                form(action='/reply', method='post')
+                  input(type="hidden", name="bottleId", value="#{bottle._id}")
+                  input(type="hidden", name="type", value="#{type}")
+                  p
+                    textarea(name='content', rows=4, cols=25)
+                  p
+                    button.reply(type="submit") 回复
+    include:jade ./footer.html
+    script(src="/js/drifter.js")
+

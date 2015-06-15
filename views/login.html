@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    include:jade ./side.html
+    .container
+      include:jade ./header.html
+      .main
+        .content
+          if success
+            p #{success}
+          else
+            p #{error}
+          p 梦幻漂流瓶登录
+        .operation
+        form.login-form(action='login', method='post' name="login-form")
+            p
+              span.label 用户名：
+              input(name='name')
+            p
+              span.label 密码：
+              input(name='password', type="password")
+            p.action
+              button(type="submit") 登录
+              button(type="reset") 重置
+
+    include:jade ./footer.html
+    script(src="/js/drifter.js")
+    script.
+      drifter.initIndex();
+

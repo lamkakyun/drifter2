@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "serif";
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.side {
+  background-color: #eee;
+  float: left;
+  width: 300px;
+}
+
+.side ul {
+  margin-top: 50px;
+  text-align: right;
+  padding: 10px 20px 100px 0px;
+  line-height: 50px;
+}
+
+.header {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px dotted #ccc;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+
+.container {
+  float: left;
+  padding: 10px 20px;
+  width: 500px;
+}
+
+.main {
+  margin-top: 20px;
+}
+
+.login-form p{
+  line-height: 30px;
+}
+.login-form p.action{
+  margin-left: 80px;
+}
+.login-form .label {
+  width: 80px;
+  display: inline-block;
+  text-align: right;
+}
+.bottles {
+
+}
+.bottle {
+  margin-top: 20px;
+}
+.bottle .reply {
+  /* float: right; */
+}
+.bottle .info {
+  background-color: green;
+}
+.bottle .content {
+  min-height: 100px;
+  background-color: #2e2;
+}
